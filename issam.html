@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Profit Organization Website</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #0062cc;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6f61;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Home Section */
+        #home {
+            background-color: #00bfae;
+            color: white;
+        }
+
+        #home h1 {
+            font-size: 2.5rem;
+        }
+
+        #home p {
+            font-size: 1.1rem;
+        }
+
+        /* Join Us Section */
+        #join {
+            background-color: #ff6f61;
+            color: white;
+        }
+
+        #join button {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #join button:hover {
+            background-color: #ff2b2b;
+        }
+
+        #join-form {
+            display: none;
+            margin-top: 30px;
+        }
+
+        #join-form input,
+        #join-form button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #join-form input[type="text"],
+        #join-form input[type="email"] {
+            width: 45%;
+            display: inline-block;
+            margin-right: 5%;
+        }
+
+        #join-form input[type="email"] {
+            margin-right: 0;
+        }
+
+        #join-form button {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #join-form button:hover {
+            background-color: #00bfae;
+        }
+
+        /* Contact Section */
+        form input[type="submit"] {
+            background-color: #0062cc;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #ff6f61;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #ff6f61;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            #join-form input,
+            #join-form button {
+                width: 100%;
+            }
+
+            #join-form input[type="text"],
+            #join-form input[type="email"] {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Non-Profit Organization</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#work">Our Work</a></li>
+                <li><a href="#join">Join Us</a></li>
+                <li><a href="#media">Videos & Articles</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to Our Cyber Crime Awareness Website</h1>
+        <p>We are here to help you understand how to protect yourself from cyber crimes.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a non-profit organization dedicated to raising awareness about cyber crimes and how to prevent them.</p>
+    </section>
+
+    <section id="work">
+        <h2>Our Work</h2>
+        <p>We have successfully implemented several awareness programs in schools and through social media campaigns.</p>
+    </section>
+
+    <section id="join">
+        <h2>Join Us</h2>
+        <p>Join us and be part of our mission to raise awareness!</p>
+        <button onclick="showForm()">Join Now</button>
+        <div id="join-form">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="email" id="email" placeholder="Your Email">
+            <button onclick="submitForm()">Submit</button>
+        </div>
+    </section>
+
+    <section id="media">
+        <h2>Videos & Articles</h2>
+        <div>
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+            <p>Article about Cyber Crimes.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="mailto:info@organization.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Non-Profit Organization</p>
+        <p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+        </p>
+    </footer>
+
+    <script>
+        function showForm() {
+            document.getElementById('join-form').style.display = 'block';
+        }
+
+        function submitForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            // Validate the inputs
+            if (name === "" || email === "") {
+                alert("Please fill out all fields.");
+            } else {
+                alert("Thank you for contacting us, " + name + "!");
+                document.getElementById('join-form').reset();
+                document.getElementById('join-form').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
